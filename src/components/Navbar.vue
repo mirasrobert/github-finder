@@ -43,6 +43,6 @@ export default {};
 
 <style>
 .router-link-active {
-  color: #fff !important;
+  color: #0099ff !important;
 }
 </style>
