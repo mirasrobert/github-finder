@@ -11,6 +11,9 @@
         />
         <div class="ms-2">
           <p class="text-white fw-bold m-0 p-0">{{ name }}</p>
+          <!-- Router Link Does Not Work with empty parameters,
+                to fix that we need to check for empty params (usn)
+           -->
           <div v-if="usn">
             <router-link
               class="text-muted m-0 p-0 small text-decoration-none"
@@ -34,6 +37,7 @@ export default {
     };
   },
   mounted() {
+    // Pass the props
     this.usn = this.username;
   },
 };

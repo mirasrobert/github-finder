@@ -14,19 +14,19 @@
       <div>
         <span class="badge bg-primary">
           <i class="fas fa-eye"></i>
-          0111
+          {{ watchers }}
         </span>
         <span class="badge bg-success ms-1">
           <i class="fas fa-star"></i>
-          102112
+          {{ stargazers }}
         </span>
         <span class="badge bg-danger ms-1">
           <i class="fas fa-info"></i>
-          312321
+          {{ open_issues }}
         </span>
         <span class="badge bg-warning ms-1">
           <i class="fas fa-utensils"></i>
-          312321
+          {{ forks }}
         </span>
       </div>
     </div>
@@ -35,7 +35,15 @@
 
 <script>
 export default {
-  props: ['title', 'description', 'count'],
+  props: [
+    'title',
+    'description',
+    'count',
+    'watchers',
+    'stargazers',
+    'open_issues',
+    'forks',
+  ],
   data() {
     return {
       isTrue: true,

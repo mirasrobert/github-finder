@@ -34,16 +34,12 @@
         </div>
       </div>
     </div>
-    <div v-else>
-      <img src="../assets/loader.gif" alt="" />
-    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 import CardProfile from '../components/CardProfile.vue';
-import '../assets/loader.gif';
 
 export default {
   components: {
@@ -68,10 +64,16 @@ export default {
           Authorization: `Bearer ${process.env.VUE_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
         };
 
-        // Asynchronous axios
-        const { data } = await axios.get(URL, { headers });
+        try {
+          // Asynchronous axios
+          const { data } = await axios.get(URL, { headers });
 
-        this.users = data.items; // Store in users array
+          this.users = data.items; // Store in users array
+
+          this.search = ''; // Empty input
+        } catch (error) {
+          console.log(error);
+        }
       }
     },
   },
