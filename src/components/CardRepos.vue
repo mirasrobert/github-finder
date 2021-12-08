@@ -1,13 +1,15 @@
 <template>
   <div class="card text-white bg-dark mb-3">
     <div class="card-body">
-      <router-link
+      <a
+        :href="url"
+        target="_blank"
         class="fw-bold title text-decoration-none"
         :to="{ name: 'Home' }"
       >
         <i class="fas fa-link"></i>
         {{ title }}
-      </router-link>
+      </a>
       <p class="small p-0 m-0 mb-1">
         {{ description }}
       </p>
@@ -43,6 +45,7 @@ export default {
     'stargazers',
     'open_issues',
     'forks',
+    'url',
   ],
   data() {
     return {

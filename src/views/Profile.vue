@@ -158,6 +158,7 @@
           <h5 class="mb-3 fw-bold">Latest Repositories</h5>
           <CardRepos
             v-for="repo in repos"
+            :url="repo.html_url"
             :title="repo.name"
             :description="repo.description"
             :watchers="repo.watchers_count"
