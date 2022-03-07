@@ -1,4 +1,5 @@
 # github_finder
+> Find or search GitHub profile with latest repositories, location, followers and etc.
 
 ## Project setup
 ```
