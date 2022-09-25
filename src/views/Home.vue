@@ -38,8 +38,10 @@
 </template>
 
 <script>
-import axios from 'axios';
-import CardProfile from '../components/CardProfile.vue';
+import axios from 'axios'
+import CardProfile from '../components/CardProfile.vue'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 export default {
   components: {
@@ -49,7 +51,7 @@ export default {
     return {
       users: [],
       search: '',
-    };
+    }
   },
 
   mounted() {},
@@ -57,25 +59,25 @@ export default {
   methods: {
     async getProfiles() {
       if (this.search !== '') {
-        const URL = `https://api.github.com/search/users?q=${this.search}&per_page=100`;
+        const URL = `https://api.github.com/search/users?q=${this.search}&per_page=100`
 
         // Pass bearer token to request to the API as many as you want -- no Rate Limit
         const headers = {
           Authorization: `Bearer ${process.env.VUE_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
-        };
+        }
 
         try {
           // Asynchronous axios
-          const { data } = await axios.get(URL, { headers });
+          const { data } = await axios.get(URL, { headers })
 
-          this.users = data.items; // Store in users array
+          this.users = data.items // Store in users array
 
-          this.search = ''; // Empty input
+          this.search = '' // Empty input
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
       }
     },
   },
-};
+}
 </script>
