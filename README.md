@@ -1,6 +1,8 @@
 # GitHub Finder
 > Find or search GitHub profile with latest repositories, location, followers and etc.
 
+![SCREENSHOT!](App_Screenshot.png)
+
 ## Project setup
 ```
 npm install
